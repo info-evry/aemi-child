@@ -13,3 +13,246 @@
  Tags:         one-column, custom-background, custom-menu, featured-image-header, featured-images, full-width-template, sticky-post, threaded-comments, translation-ready
  Text Domain:  aemi
 */
+
+.element {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	margin: 1rem 0;
+	padding: 1.25rem;
+	border-radius: calc(var(--radius) * 2);
+	background-color: var(--element-background);
+}
+
+.element:first-child {
+	margin-top: 0;
+}
+.element:last-child {
+	margin-bottom: 0;
+}
+
+.el-title {
+	margin-top: 0;
+	margin-bottom: .5em;
+	font-size: 1.5em;
+	font-weight: 600 !important;
+	text-overflow: ellipsis;
+	letter-spacing: -.03em;
+	word-break: break-all;
+	word-wrap: break-word;
+	color: var(--text-important);
+}
+
+#edt-element.toggle:not(.toggled) + * {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height .3s ease;
+}
+
+#edt-element.toggle.toggled + * {
+	max-height: auto;
+	overflow: visible;
+	transition: max-height .3s ease;
+}
+
+.el-content {
+	line-height: 1;
+	font-weight: 400 !important;
+	opacity: 1;
+	color: #1166CC !important;
+	text-align: left;
+	transition: opacity .3s ease;
+}
+
+.element:hover .el-content:not(.aaa),
+.element:hover .el-content:not(.aaa),
+.aaa:hover {
+	opacity: .7;
+	transition: opacity .3s ease;
+}
+
+#edt-form input {
+	line-height: 1 !important;
+}
+
+#edt-container {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+}
+
+#edt-form {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+#edt-container > *:not(:first-child) {
+	margin: 1em 0 0;
+}
+
+#edt-form > * {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: center;
+}
+
+#edt-form > *:not(:first-child) {
+	margin: .5em 0 0;
+}
+
+#edt-form > [class$='-block'] > *:not(:first-child) {
+	margin-left: .5em;
+}
+
+#edt-form > [class$='-block'] > * {
+	margin-top: .5em;
+}
+
+.edt-backward,
+.edt-forward,
+#set-default-cookie {
+	min-width: 2.75rem;
+}
+
+.used,
+.used:hover,
+body.color-scheme-dark .used,
+body.color-scheme-dark .used:hover {
+	border-radius: 5px !important;
+	border-color: var(--input-border) !important;
+	background-color: var(--input-border) !important;
+	color: var(--text-color);
+}
+
+#modal-bar {
+	position: fixed;
+	left: 0;
+	bottom: -86px;
+	display: flex;
+	align-content: center;
+	align-items: center;
+	padding: 20px;
+	width: 100vw;
+	font-weight: bold;
+	background-color: var(--page-color);
+	color: var(--text-color);
+	transition: .3s all ease;
+}
+
+#modal-bar>* {
+	flex: 1 0 auto;
+	height: 46px;
+	width: auto;
+	font-size: 2em;
+	line-height: 46px;
+	text-align: center;
+	transition: .3s all ease;
+}
+
+#modal-bar>*:hover {
+	color: var(--text-color);
+	cursor: pointer;
+	transition: .3s all ease;
+}
+
+#edt-img-cont img {
+	width: 100%;
+	transition: .3s all ease;
+}
+
+#edt-img-cont:not(.modal-active) {
+	position: relative;
+}
+
+#edt-img-cont {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: flex-start;
+	margin: auto;
+	padding: 0;
+	height: auto;
+	width: 100%;
+	background-color: var(--page-color);
+	cursor: pointer;
+}
+
+#edt-img-cont.modal-active {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-flow: column nowrap;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	margin-top: 0 !important;
+	padding: 0 0 86px;
+	height: 100vh;
+	width: 100vw;
+	background-color: var(--page-color);
+	z-index: 1000;
+	transition: .3s all ease;
+	cursor: default;
+}
+
+#edt-img-cont.modal-active img {
+	height: auto;
+	max-height: calc(100vh - 86px) !important;
+	max-width: 100% !important;
+	width: auto;
+	transition: .3s all ease;
+}
+
+#edt-img-cont.modal-active+#modal-bar {
+	bottom: 0;
+	z-index: 1000;
+	transition: .3s all ease;
+}
+
+#edt-info {
+	margin-top: .5em;
+}
+
+#adieve-form {
+	display: grid;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	justify-items: center;
+	margin: 0 auto;
+	width: auto;
+}
+
+#adieve-form > *,
+#adieve-form label {
+	display: block;
+	margin: 0;
+}
+
+#adieve-form > div > div:not(:first-child) {
+	margin-top: 2rem;
+}
+
+#adieve-form > div:not(:last-child) {
+	border: 1px solid rgb(128,128,128);
+	border-radius: 4pt;
+	padding: 1rem;
+}
+
+#adieve-form > div:not(:last-child) {
+	margin-bottom: 2.5rem;
+}
+
+.input-detail {
+	color: rgb(128,128,128);
+	font-size: .8em;
+	line-height: 1.5;
+	margin: .5rem auto;
+	max-width: calc(100vw - 6rem);
+	width: 50ch;
+}
